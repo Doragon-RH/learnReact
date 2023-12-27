@@ -1,3 +1,8 @@
+このリポジトリは、Next.js, Reactの学習記録用として作成しています。
+思ったことなどは、以下のzennの記事としてまとめています。
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
