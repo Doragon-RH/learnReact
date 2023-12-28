@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
+import classNames from "classnames";
+import Avatar from './component';
 
-import Avatar from './component'
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -187,8 +187,8 @@ const person = {
 
 function Card({ children }) {
   return (
-    <div className="card">
-      {children}
-    </div>
+      <div className="card">
+        {children}
+      </div>
   );
 }
