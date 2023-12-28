@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import classNames from "classnames";
+import Clock from './clock';
 import Avatar from './component';
+import { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const time = useTime();
+  const [color, setColor] = useState('lightcoral');
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
@@ -174,6 +177,17 @@ export default function Home() {
         }}
       />
     </Card>
+    <div>
+      <p>
+        Pick a color:{` `}
+        <select value={color} onChange={e => setColor(e.target.value)}>
+          <option value="lightcoral">Light Coral</option>
+          <option value="lightblue">Light Blue</option>
+          <option value="lightgreen">Light Green</option>  
+        </select>
+      </p>
+    </div>
+    <Clock color={color} time={time.toLocaleTimeString()}></Clock>
     </main>
   )
 }
@@ -191,4 +205,14 @@ function Card({ children }) {
         {children}
       </div>
   );
+}
+function useTime() {
+  const [time, setTime] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
 }
