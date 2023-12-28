@@ -164,6 +164,7 @@ export default function Home() {
         }}
       />
     </div>
+    
     <Card>
       <Avatar
         size={100}
