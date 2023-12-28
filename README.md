@@ -2,7 +2,7 @@
 ファイル内のコードは多少汚くなりまずが、
 思ったことなどは、以下のzennの記事としてまとめています。
 
-
+https://zenn.dev/honbinliu/articles/bcb44b6808fc47
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
