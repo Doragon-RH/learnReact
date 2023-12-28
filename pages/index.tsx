@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { getImageUrl } from './component';
-import Profile from './component'
+
+import Avatar from './component'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -115,7 +115,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <Profile />
       <>
       <h1>Hedy Lamarr's Todos</h1>
       <img
@@ -151,6 +150,7 @@ export default function Home() {
         }}
       />
       <Avatar
+      size={50}
         person={{
           name: 'Aklilu Lemma', 
           imageId: 'OKS67lh'
@@ -164,6 +164,15 @@ export default function Home() {
         }}
       />
     </div>
+    <Card>
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
     </main>
   )
 }
@@ -174,21 +183,11 @@ const person = {
     color: 'pink'
   }
 };
-function Avatar({ person, size =100}) {
-  return (
-    <img
-    className="avatar"
-    src={getImageUrl(person)}
-    alt={person.name}
-    width={size}
-    height={size}
-    />
-  );
-}
-function Profile(props) {
+
+function Card({ children }) {
   return (
     <div className="card">
-      <Avatar {...props} />
+      {children}
     </div>
   );
 }

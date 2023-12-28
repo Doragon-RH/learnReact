@@ -1,16 +1,14 @@
-export default function Profile() {
-    return (
-      <img
-        src="https://i.imgur.com/MK3eW3As.jpg"
-        alt="Katherine Johnson"
-      />
-    );
-  }
-export function getImageUrl(person, size = 's') {
+import { getImageUrl } from './get';
+
+
+export default function Avatar({ person, size =100}) {
   return (
-    'https://i.imgur.com/' +
-    person.imageId +
-    size +
-    '.jpg'
+    <img
+    className="avatar"
+    src={getImageUrl(person)}
+    alt={person.name}
+    width={size + 50}
+    height={size}
+    />
   );
 }
